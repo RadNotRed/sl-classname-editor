@@ -57,7 +57,7 @@ const ClassList: React.FC = () => {
 
     const handleSave = async () => {
         await saveClassNames(classNames);
-        alert('Class names saved successfully! Please place the downloaded file in the desired directory.');
+        alert('Class names saved successfully! Place the downloaded file into the desired translation directory.');
     };
 
     const handleChange = (index: number, newName: string) => {
