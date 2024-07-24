@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  sl-classname-editor:
+    hostname: sl-classname-editor
+    image: ghcr.io/radnotred/sl-classname-editor:master
+    restart: always
+    ports:
+      - "20113:9000"
+
+networks:
+  nginx-proxy-manager_default:
+    external: true
