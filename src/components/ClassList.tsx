@@ -69,6 +69,10 @@ const ClassList: React.FC = () => {
     const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
+            if (file.type !== 'text/plain') {
+                alert('You may only import text files.');
+                return;
+            }
             const reader = new FileReader();
             reader.onload = (e) => {
                 const content = e.target?.result as string;
@@ -99,7 +103,7 @@ const ClassList: React.FC = () => {
                 <label htmlFor="file-upload" className="file-upload-label">
                     Import previous configuration
                 </label>
-                <input id="file-upload" type="file" accept="text/plain" onChange={handleFileUpload}/>
+                <input id="file-upload" type="file" accept=".txt" onChange={handleFileUpload}/>
             </div>
         </div>
     );
